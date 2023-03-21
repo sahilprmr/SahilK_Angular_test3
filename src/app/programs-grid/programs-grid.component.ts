@@ -30,7 +30,7 @@ export class ProgramsGridComponent implements OnInit {
     editProgramBtnClicked(programdata:any){
       console.log(programdata);
       this.apiservice.fillprogramdata= programdata;
-      this.apiservice.addingEditedDataToApi(programdata);
+      this.apiservice.addingEditedDataToApi(programdata,programdata.programID);
       this.route.navigate(['edit']);      
     }
     activate(){

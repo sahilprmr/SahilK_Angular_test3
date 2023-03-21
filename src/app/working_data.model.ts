@@ -5,4 +5,6 @@ export interface WorkingData{
     programDescription:string;
     isActive:boolean;
     canDelete:boolean;
+    isVirtual:boolean;
+    programID:string;
 }
