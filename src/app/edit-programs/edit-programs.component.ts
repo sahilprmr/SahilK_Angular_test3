@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Form } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiDataService } from '../Api Calls/api-data.service';
 import { WorkingData } from '../working_data.model';
 
@@ -13,7 +14,9 @@ export class EditProgramsComponent implements OnInit{
 
   @ViewChild('editform') editform! : ElementRef;
   edit = false;
-constructor(private apidataserv:ApiDataService, private http:HttpClient){}
+  
+  constructor(private apidataserv:ApiDataService, private http:HttpClient,private route:Router){}
+ 
   editingprogramdata = {
                           programName:'',
                           programNumber:'',
@@ -21,6 +24,7 @@ constructor(private apidataserv:ApiDataService, private http:HttpClient){}
                           programDescription:'',
                           isActive:true,
                           canDelete:false,
+                          isVirtual:true,
                         }
   
   ngOnInit() {
@@ -31,6 +35,10 @@ constructor(private apidataserv:ApiDataService, private http:HttpClient){}
   saveEditedProgram(editedform:WorkingData){
     console.log(editedform);
     this.apidataserv.savingEditedForm(editedform);
+  }
+
+  goBack(){
+    this.route.navigate(['/']);
   }
 
 }
