@@ -1,6 +1,8 @@
 export interface WorkingData{
-    name:string;
-    programNo:string;
+    programName:string;
+    programNumber:string;
     programBudget:string;
-    description:string;
+    programDescription:string;
+    isActive:boolean;
+    canDelete:boolean;
 }

@@ -6,22 +6,27 @@ import { AppComponent } from './app.component';
 import { MasterProgramComponent } from './master-program/master-program.component';
 import { ProgramsGridComponent } from './programs-grid/programs-grid.component';
 import { AddEditProgramComponent } from './add-edit-program/add-edit-program.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { EditProgramsComponent } from './edit-programs/edit-programs.component';
+import { FormsModule } from '@angular/forms';
+import { FilterService} from '@syncfusion/ej2-angular-grids';
 
 @NgModule({
   declarations: [
     AppComponent,
     MasterProgramComponent,
     ProgramsGridComponent,
-    AddEditProgramComponent
+    AddEditProgramComponent,
+    EditProgramsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GridModule,
     HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [FilterService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,32 @@
+<div class="container">
+<div class="row col-xs-12 col-md-5">
+    
+        <form #editform="ngForm">
+
+            <div class="form-group">
+                <label for="programName">Program Name</label>
+                <input type="text" class="form-control" value="programName" name="programNameInput" ngModel>
+            </div>
+
+            <div class="form-group">
+                <label for="programNumber">Program Number</label>
+                <input type="text"class="form-control" value="programNumber" name="prograNumberInput" ngModel>
+            </div>
+
+            <div class="form-group">
+                <label for="programBudget">Program Budget</label>
+                <input type="text" class="form-control" value="programBudget" name="programBudgetInput" ngModel>
+            </div>
+
+            <div class="form-group">
+                <label for="programDesc">Program Description</label>
+                <input type="text" class="form-control" value="programDescription" name="programDescInput"ngModel>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary" (click)="editProgramBtnclicked(editform.value)" name="savebtn">Save</button>
+            </div>
+        </form>
+
+</div>
+</div>
