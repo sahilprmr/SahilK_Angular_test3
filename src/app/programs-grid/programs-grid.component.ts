@@ -26,10 +26,14 @@ export class ProgramsGridComponent implements OnInit {
       this.fetching = false;
       })
     }
+    arraydata =[{message:'',
+                  
+                  programdata:{},success:''}]
 
     editProgramBtnClicked(programdata:any){
-      console.log(programdata);
+      console.log(programdata);      
       this.apiservice.fillprogramdata= programdata;
+      console.log(this.apiservice.fillprogramdata);
       this.apiservice.addingEditedDataToApi(programdata,programdata.programID);
       this.route.navigate(['edit']);      
     }
