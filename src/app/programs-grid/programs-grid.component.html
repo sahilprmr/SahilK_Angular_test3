@@ -8,15 +8,13 @@
                 <e-column field='programBudget' headerText='Program Budget' textAlign='center' format='C2' width=90></e-column>
                 <e-column field='programDescription' headerText='Description' textAlign='center' format='yMd' width=120></e-column>
                 <e-column field='isactive' headerText='Action' textAlign='center' width=90>
-                    <ng-template #template>
+                    <ng-template #template let-data>
                         <div>
-                            <button class="btn btn-primary">Add</button>
-                            <button  ngClass="activate === true ? btn-primary : btn-danger">{{}}</button>
+                            <button class="btn btn-primary" (click)="editProgramBtnClicked(data)">Edit</button>
+                            <button  [ngClass]="{'btn-primary':status === true,'btn-danger':status===false}" class="statusbtn">{{status ? 'Activate':'Deactivate'}}</button>
                         </div>
                     </ng-template> </e-column>
-
         </e-columns>
-        
     </ejs-grid>
 </div>
 </div>

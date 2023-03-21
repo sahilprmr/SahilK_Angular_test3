@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { FormsModule } from '@angular/forms';
 import { FilterService} from '@syncfusion/ej2-angular-grids';
+import { Routes } from '@angular/router';
+
+
 
 @NgModule({
   declarations: [

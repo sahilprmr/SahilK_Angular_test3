@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { load } from '@syncfusion/ej2-angular-grids';
 import { map, pluck } from 'rxjs';
 import { ApiDataService } from '../Api Calls/api-data.service';
 import { WorkingData } from '../working_data.model';
@@ -14,19 +16,27 @@ export class ProgramsGridComponent implements OnInit {
 
   fetching = true;
   
-  isactive =true;
+  status =true;
   
-  activate = true;
-  constructor(private apiservice:ApiDataService){}
+  constructor(private apiservice:ApiDataService, private route:Router){}
 
   ngOnInit() {
-      this.apiservice.gettingDataFromApi().pipe(pluck('programs')).subscribe(res=>{
+      this.apiservice.gettingDataFromApi().pipe(pluck('programs'),).subscribe(res=>{
       this.data =res;
       this.fetching = false;
       })
     }
 
-    programStatus(){
-      this.activate =!this.activate
+    editProgramBtnClicked(programdata:any){
+      console.log(programdata);
+      this.apiservice.fillprogramdata= programdata;
+      this.apiservice.addingEditedDataToApi(programdata);
+      this.route.navigate(['edit']);      
+    }
+    activate(){
+      this.status = !this.status;
+    }
+    deactivate(){
+      this.status = !this.status;
     }
 }
