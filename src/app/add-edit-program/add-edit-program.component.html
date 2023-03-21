@@ -1,0 +1,5 @@
+<button>ADD</button>
+<button *ngIf="programStatus === 'active'"; else deactivate>Activate</button>
+<ng-template #deactivate>
+    <button>Deactivate</button>
+</ng-template>
