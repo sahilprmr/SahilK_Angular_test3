@@ -36,8 +36,9 @@ export class EditProgramsComponent implements OnInit{
     editedform.programID=programID;
       this.apidataserv.savingEditedForm(editedform,programID);
       alert('Data Edited Succesfully!')
-      this.apidataserv.popup.next(false);
       this.apidataserv.ngOnInit();
+      this.apidataserv.popup.next(false);
+      
   }
   closepopup(){
     this.apidataserv.popup.next(false);

@@ -29,7 +29,7 @@ export class ApiDataService implements OnInit {
 
   constructor(private http:HttpClient) {}
 
-  ngOnInit() {  this.gettingDataFromApi().subscribe();  
+  ngOnInit() {  this.gettingDataFromApi();  
     }
 
   gettingDataFromApi()  
