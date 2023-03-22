@@ -54,6 +54,7 @@ export class EditProgramsComponent implements OnInit{
    if( confirm('New Program Added Successfully!')){
     this.apidataserv.popup.next(false);
     this.apidataserv.popupswitch.next(false);
+    this.apidataserv.ngOnInit();
    }
   }
 }
