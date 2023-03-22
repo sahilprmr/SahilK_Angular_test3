@@ -1,5 +1,5 @@
 <div class="container">
-    <h4 *ngIf="fetching ===true">Please Wait...</h4>
+    <h4 *ngIf="fetching===true">Please Wait...</h4>
 <div class="row col-xs-12">
     <ejs-grid [dataSource]='data' [allowFiltering]="true" gridLines="Both">
         <e-columns>
@@ -11,7 +11,7 @@
                     <ng-template #template let-data>
                         <div>
                             <button class="btn btn-primary" (click)="editProgramBtnClicked(data)">Edit</button>
-                            <button   class="btn btn-primary">{{status ? 'Activate':'Deactivate'}}</button>
+                            <button [ngClass]="status?'btn btn-primary':'btn btn-danger'">*ngIf="status?{{'Activate'}}:{{'Deactivate'}}"</button>
                         </div>
                     </ng-template> </e-column>
         </e-columns>
@@ -19,5 +19,3 @@
 </div>
 </div>
 <app-edit-programs *ngIf="Ppopup.value" onclick="closepopup()"></app-edit-programs>
-
-<!-- [ngClass]="{'btn-primary':status === true,'btn-danger':status===false}" -->

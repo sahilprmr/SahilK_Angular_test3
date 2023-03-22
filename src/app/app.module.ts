@@ -5,21 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MasterProgramComponent } from './master-program/master-program.component';
 import { ProgramsGridComponent } from './programs-grid/programs-grid.component';
-import { AddEditProgramComponent } from './add-edit-program/add-edit-program.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { FormsModule } from '@angular/forms';
 import { FilterService} from '@syncfusion/ej2-angular-grids';
-import { Routes } from '@angular/router';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     MasterProgramComponent,
     ProgramsGridComponent,
-    AddEditProgramComponent,
     EditProgramsComponent
   ],
   imports: [

@@ -16,11 +16,9 @@ export class ProgramsGridComponent implements OnInit {
 
   fetching = true;
   
-  status =true;
+  status = this.apiservice.programStatus;
   
   Ppopup=this.apiservice.popup;
-
-
 
   constructor(private apiservice:ApiDataService, private route:Router){}
 
@@ -30,24 +28,15 @@ export class ProgramsGridComponent implements OnInit {
       this.fetching = false;
       })
     }
-
     editProgramBtnClicked(programdata:any){
-      console.log('from Edit function');
-      
-      console.log(programdata);      
       this.apiservice.fillprogramdata= programdata;
-
-      // console.log(this.apiservice.fillprogramdata);
-
-      // this.apiservice.addingEditedDataToApi(programdata,programdata.programID);
-
       this.apiservice.popup.next(true);
     }
     activate(){
-      this.status = !this.status;
+      this.apiservice.programStatus.next(true);
     }
     deactivate(){
-      this.status = !this.status;
+      this.apiservice.programStatus.next(false);
     }
     closepopup(){
     this.apiservice.popup.next(false)

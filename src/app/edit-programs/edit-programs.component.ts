@@ -28,24 +28,16 @@ export class EditProgramsComponent implements OnInit{
                         }
   
   ngOnInit() {
-   this.editingprogramdata = this.apidataserv.fillprogramdata;
-  //  console.log(this.editingprogramdata);
+                this.editingprogramdata = this.apidataserv.fillprogramdata;
   }
 
   saveEditedProgram(editedform:WorkingData,programID:string){
-    editedform.programID=programID
-    console.log('savebtneditedform');
-    
-    console.log(editedform);
-    this.apidataserv.savingEditedForm(editedform,programID);
+    editedform.programID=programID;
+      this.apidataserv.savingEditedForm(editedform,programID);
     alert('Data Edited Succesfully!')
-  }
-
-  goBack(){
-    this.route.navigate(['/']);
+      this.apidataserv.popup.next(false);
   }
   closepopup(){
-    this.apidataserv.popup.next(false);
+      this.apidataserv.popup.next(false);
   }
-
 }
