@@ -34,6 +34,7 @@ export class EditProgramsComponent implements OnInit{
   saveEditedProgram(editedform:WorkingData){
     console.log(editedform);
     this.apidataserv.savingEditedForm(editedform);
+    alert('Data Edited Succesfully!')
   }
 
   goBack(){
