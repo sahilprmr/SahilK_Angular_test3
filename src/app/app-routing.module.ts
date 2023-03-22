@@ -15,7 +15,7 @@ const routes: Routes = [
       },
               ],
     },
-    { path:'edit',component:EditProgramsComponent },
+    // { path:'edit',component:EditProgramsComponent },
 ];
 
 @NgModule({

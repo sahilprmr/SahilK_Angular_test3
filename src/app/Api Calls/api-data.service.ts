@@ -1,13 +1,16 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { WorkingData } from '../working_data.model';
+import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiDataService implements OnInit {
 
   apiGetData!: WorkingData;
-  
+
+  popup = new BehaviorSubject<boolean>(false);
+
   fillprogramdata ={
     progrmID:'',
     programName:'',
@@ -19,10 +22,13 @@ export class ApiDataService implements OnInit {
     isVirtual:false,
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+  
+ 
+  }
 
   ngOnInit(){
-             this.gettingDataFromApi();              
+             this.gettingDataFromApi();  
              }
 
   gettingDataFromApi()  

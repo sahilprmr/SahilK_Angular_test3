@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { load } from '@syncfusion/ej2-angular-grids';
 import { map, pluck } from 'rxjs';
@@ -18,6 +18,9 @@ export class ProgramsGridComponent implements OnInit {
   
   status =true;
   
+  Ppopup=this.apiservice.popup;
+
+  
   constructor(private apiservice:ApiDataService, private route:Router){}
 
   ngOnInit() {
@@ -35,12 +38,16 @@ export class ProgramsGridComponent implements OnInit {
       this.apiservice.fillprogramdata= programdata;
       console.log(this.apiservice.fillprogramdata);
       this.apiservice.addingEditedDataToApi(programdata,programdata.programID);
-      this.route.navigate(['edit']);      
+      this.route.navigate(['edit']); 
+      this.apiservice.popup.next(true);
     }
     activate(){
       this.status = !this.status;
     }
     deactivate(){
       this.status = !this.status;
+    }
+    closepopup(){
+    this.apiservice.popup.next(false)
     }
 }
