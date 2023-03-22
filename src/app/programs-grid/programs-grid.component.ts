@@ -1,9 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { load } from '@syncfusion/ej2-angular-grids';
-import { map, pluck } from 'rxjs';
+import { pluck } from 'rxjs';
 import { ApiDataService } from '../Api Calls/api-data.service';
-import { WorkingData } from '../working_data.model';
 
 @Component({
   selector: 'app-programs-grid',
@@ -30,6 +28,10 @@ export class ProgramsGridComponent implements OnInit {
     }
     editProgramBtnClicked(programdata:any){
       this.apiservice.fillprogramdata= programdata;
+      this.apiservice.popup.next(true);
+    }
+    addProgramBtnClicked(addnewprogram:any){
+      this.apiservice.fillprogramdata = addnewprogram;
       this.apiservice.popup.next(true);
     }
     activate(){
