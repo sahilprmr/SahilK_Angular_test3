@@ -38,27 +38,27 @@
    <form #editform="ngForm" class="editform">
             <div class="form-group">
                 <label for="programName">Program Name</label>
-                <input type="text" class="form-control" [(ngModel)]="editingprogramdata.programName" name="programNameInput" ngModel>
+                <input type="text" class="form-control" [(ngModel)]="editingprogramdata.programName" name="programName" ngModel>
             </div>
 
             <div class="form-group">
                 <label for="programNumber">Program Number</label>
-                <input type="text"class="form-control" [(ngModel)]="editingprogramdata.programNumber" name="prograNumberInput" >
+                <input type="text"class="form-control" [(ngModel)]="editingprogramdata.programNumber" name="programNumber" >
             </div>
 
             <div class="form-group">
                 <label for="programBudget">Program Budget</label>
-                <input type="text" class="form-control" [(ngModel)]="editingprogramdata.programBudget" name="programBudgetInput" >
+                <input type="text" class="form-control" [(ngModel)]="editingprogramdata.programBudget" name="programBudget" >
             </div>
 
             <div class="form-group">
                 <label for="programDesc">Program Description</label>
-                <input type="text" class="form-control" [(ngModel)]="editingprogramdata.programDescription" name="programDescInput"ngModel>
+                <input type="text" class="form-control" [(ngModel)]="editingprogramdata.programDescription" name="programDescription"ngModel>
             </div>
 
             <div>
-                <button type="button" class="btn btn-primary" (click)="saveEditedProgram(editform.value)" name="savebtn">Save</button>
-                <button class="btn btn-primary" (click)="closepopup()" >Close</button>
+                <button type="button" class="btn btn-primary" (click)="saveEditedProgram(editform.value,editingprogramdata.programID)" name="savebtn">Save</button>
+                <button class="btn btn-primary" (click)="closepopup()">Close</button>
             </div>
         </form>
   

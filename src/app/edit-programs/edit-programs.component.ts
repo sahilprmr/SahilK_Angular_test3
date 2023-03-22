@@ -19,21 +19,25 @@ export class EditProgramsComponent implements OnInit{
   editingprogramdata = {
                           programName:'',
                           programNumber:'',
-                          programBudget:'',
+                          programBudget:0,
                           programDescription:'',
                           isActive:true,
                           canDelete:false,
                           isVirtual:true,
+                          programID:''
                         }
   
   ngOnInit() {
    this.editingprogramdata = this.apidataserv.fillprogramdata;
-   console.log(this.editingprogramdata);
+  //  console.log(this.editingprogramdata);
   }
 
-  saveEditedProgram(editedform:WorkingData){
+  saveEditedProgram(editedform:WorkingData,programID:string){
+    editedform.programID=programID
+    console.log('savebtneditedform');
+    
     console.log(editedform);
-    this.apidataserv.savingEditedForm(editedform);
+    this.apidataserv.savingEditedForm(editedform,programID);
     alert('Data Edited Succesfully!')
   }
 
