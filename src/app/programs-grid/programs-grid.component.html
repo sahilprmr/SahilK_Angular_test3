@@ -11,6 +11,7 @@
                     <ng-template #template let-data>
                         <div>
                             <button class="btn btn-primary" (click)="editProgramBtnClicked(data)">Edit</button>
+                            <button class="btn btn-primary" (click)="addProgramBtnClicked(data)">Add</button>
                             <button [ngClass]="status?'btn btn-primary':'btn btn-danger'">*ngIf="status?{{'Activate'}}:{{'Deactivate'}}"</button>
                         </div>
                     </ng-template> </e-column>
