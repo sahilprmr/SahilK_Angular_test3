@@ -51,5 +51,9 @@ export class EditProgramsComponent implements OnInit{
     this.apidataserv.fillprogramdata = data;
     console.log(this.apidataserv.fillprogramdata);
     this.apidataserv.addNewProgramToApi(data).subscribe();
+   if( confirm('New Program Added Successfully!')){
+    this.apidataserv.popup.next(false);
+    this.apidataserv.popupswitch.next(false);
+   }
   }
 }
