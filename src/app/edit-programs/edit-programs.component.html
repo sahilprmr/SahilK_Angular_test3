@@ -1,6 +1,6 @@
 <div class="backdrop">
 <div class="alert-box">
-   <form #editform="ngForm" class="editform">
+   <form #editform="ngForm" class="editform" *ngIf="editpopupform.value">
             <div class="form-group">
                 <label for="programName">Program Name</label>
                 <input type="text" class="form-control" [(ngModel)]="editingprogramdata.programName" name="programName" ngModel>
@@ -26,5 +26,28 @@
                 <button class="btn btn-danger" (click)="closepopup()">Close</button>
             </div>
         </form>
+        <!-- Adding Program Form -->
+            <form #addform = "ngForm"*ngIf="!editpopupform.value">
+                <div class="form-group">
+                    <label for="programName">ProgramName</label>
+                    <input name="programName" class="form-control" ngModel required>
+                </div>
+                <div class="form-group">
+                    <label for="programNumber">ProgramNumber</label>
+                    <input name="programNumber" class="form-control"  ngModel required>
+                </div>
+                <div class="form-group">
+                    <label for="programBudget">ProgramBudget</label>
+                    <input name="programBudget" class="form-control" ngModel required>
+                </div>
+                <div class="form-group">
+                    <label for="programDescription">ProgramDescription</label>
+                    <input name="programDescription" class="form-control"ngModel required>
+                </div>
+                <div>
+                    <button class="btn btn-primary" (click)="addprogram(addform.value)">Add Program</button>
+                    <button class="btn btn-danger" (click)="close()">Close</button>
+                </div>
+            </form>
 </div>
 </div>

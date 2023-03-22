@@ -1,6 +1,6 @@
 <div class="container">
     <h4 *ngIf="fetching===true">Please Wait...</h4>
-<div class="row col-xs-12">
+    <button class="btn btn-primary" (click)="addProgramBtnClicked(data)">Add</button><div class="row col-xs-12">
     <ejs-grid [dataSource]='data' [allowFiltering]="true" gridLines="Both">
         <e-columns>
                 <e-column field='programName' headerText='Name' textAlign='center' width=90></e-column>
@@ -11,8 +11,7 @@
                     <ng-template #template let-data>
                         <div>
                             <button class="btn btn-primary" (click)="editProgramBtnClicked(data)">Edit</button>
-                            <button class="btn btn-primary" (click)="addProgramBtnClicked(data)">Add</button>
-                            <button [ngClass]="status?'btn btn-primary':'btn btn-danger'">*ngIf="status?{{'Activate'}}:{{'Deactivate'}}"</button>
+                            <button [ngClass]="status?'btn btn-primary':'btn btn-danger'">Activate</button>
                         </div>
                     </ng-template> </e-column>
         </e-columns>

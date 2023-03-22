@@ -7,7 +7,7 @@ import { MasterProgramComponent } from './master-program/master-program.componen
 import { ProgramsGridComponent } from './programs-grid/programs-grid.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProgramsComponent } from './edit-programs/edit-programs.component';
-import { FormsModule } from '@angular/forms';
+import {Form, FormsModule } from '@angular/forms';
 import { FilterService} from '@syncfusion/ej2-angular-grids';
 
 @NgModule({

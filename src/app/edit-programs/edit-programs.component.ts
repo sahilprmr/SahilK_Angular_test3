@@ -13,6 +13,7 @@ import { WorkingData } from '../working_data.model';
 export class EditProgramsComponent implements OnInit{
 
   @ViewChild('editform') editform! : ElementRef;
+  editpopupform = this.apidataserv.popupswitch;
 
   constructor(private apidataserv:ApiDataService, private http:HttpClient,private route:Router){}
  
@@ -38,6 +39,17 @@ export class EditProgramsComponent implements OnInit{
       this.apidataserv.popup.next(false);
   }
   closepopup(){
-      this.apidataserv.popup.next(false);
+    this.apidataserv.popup.next(false);
+    this.apidataserv.popupswitch.next(false);
+  }
+  close()
+  {
+     this.apidataserv.popup.next(false);
+     this.apidataserv.popupswitch.next(false);
+  }
+  addprogram(data:any){
+    this.apidataserv.fillprogramdata = data;
+    console.log(this.apidataserv.fillprogramdata);
+    this.apidataserv.addNewProgramToApi(data).subscribe();
   }
 }

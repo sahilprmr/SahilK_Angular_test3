@@ -10,6 +10,8 @@ import { ApiDataService } from '../Api Calls/api-data.service';
 })
 export class ProgramsGridComponent implements OnInit {
   
+  public createForm:any;
+
   public data:any;
 
   fetching = true;
@@ -28,9 +30,11 @@ export class ProgramsGridComponent implements OnInit {
     }
     editProgramBtnClicked(programdata:any){
       this.apiservice.fillprogramdata= programdata;
+      this.apiservice.popupswitch.next(true);
       this.apiservice.popup.next(true);
     }
     addProgramBtnClicked(addnewprogram:any){
+      this.apiservice.popupswitch.next(false);
       this.apiservice.fillprogramdata = addnewprogram;
       this.apiservice.popup.next(true);
     }
