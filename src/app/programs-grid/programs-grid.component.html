@@ -11,7 +11,7 @@
                     <ng-template #template let-data>
                         <div>
                             <button class="btn btn-primary" (click)="editProgramBtnClicked(data)">Edit</button>
-                            <button  [ngClass]="{'btn-primary':status === true,'btn-danger':status===false}" class="statusbtn">{{status ? 'Activate':'Deactivate'}}</button>
+                            <button   class="btn btn-primary">{{status ? 'Activate':'Deactivate'}}</button>
                         </div>
                     </ng-template> </e-column>
         </e-columns>
@@ -20,3 +20,4 @@
 </div>
 <app-edit-programs *ngIf="Ppopup.value" onclick="closepopup()"></app-edit-programs>
 
+<!-- [ngClass]="{'btn-primary':status === true,'btn-danger':status===false}" -->
